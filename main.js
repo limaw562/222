@@ -34,7 +34,7 @@ const proxy = createProxyMiddleware({
 app.use('/', (req, res, next) => {
   const targetUrl = req.originalUrl.substring(1);
   if (!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
-    return res.status(400).send('闲人免进啊，兄弟！');
+    return res.status(400).send('你好，我是银贼，这里是我的极简风格个人主页！');
   }
   return proxy(req, res, next);
 });
@@ -42,5 +42,5 @@ app.use('/', (req, res, next) => {
 // 启动服务器
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`代理已启动，端口 ${PORT}，闲人免进 😉`);
+  console.log(`你好，我是银贼`);
 });
